@@ -1,48 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>响应头信息</title>
+    <link rel="icon" href="data:;base64,=">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customized Response</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         #container {
             display: flex;
+            height: 100vh;
         }
         #left {
             flex: 1;
+            padding: 20px;
+            background-color: #f2f2f2;
         }
         #right {
             flex: 1;
-            overflow: hidden;
-        }
-        #headerDisplay {
-            white-space: pre-wrap;
+            padding: 20px;
             overflow: auto;
-            height: 300px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea, input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #headerDisplay, #bodyDisplay, #codeDisplay {
+            white-space: pre-wrap;
+            max-width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            border: 1px solid #ccc;
+            padding: 10px;
         }
     </style>
-
 </head>
 <body>
 
-    <div id="container">
-        <div id="left">
-            <div id="formWrapper">
-                <form method="post">
-                    <h1>请输入响应头信息</h1>
-                    <textarea id="headerInput" name="headerInput" rows="10" cols="50"></textarea><br>
-                    <button>更新响应头信息</button>
-                    <h1>请输入响应体信息</h1>
-                    <textarea id="bodyInput" name="bodyInput" rows="10" cols="50"></textarea><br>
-
-                </form>
-            </div>
-        </div>
-        <div id="right">
-            <h1>当前的响应头信息:</h1>
-            <div id="headerDisplay">{{headers_data}}</div>
-            <h1>当前的响应体信息:</h1>
-            <div id="bodyDisplay">{{body_data}}</div>
-        </div>
+<div id="container">
+    <div id="left">
+        <form method="post">
+            <h2>请输入响应码</h2>
+            <input type="text" id="codeInput" name="codeInput" placeholder="输入响应码">
+            <h2>请输入响应头信息</h2>
+            <textarea id="headerInput" name="headerInput" rows="7" cols="50"></textarea>
+            <h2>请输入响应体信息</h2>
+            <textarea id="bodyInput" name="bodyInput" rows="7" cols="50"></textarea>
+            <button>更新信息</button>
+        </form>
     </div>
+    <div id="right">
+        <h2>当前的响应码:</h2>
+        <div id="codeDisplay">{{code_data}}</div>
+        <h2>当前的响应头信息:</h2>
+        <div id="headerDisplay">{{headers_data}}</div>
+        <h2>当前的响应体信息:</h2>
+        <div id="bodyDisplay">{{body_data}}</div>
+    </div>
+</div>
+
 </body>
 </html>
