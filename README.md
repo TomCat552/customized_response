@@ -16,15 +16,15 @@ docker run -p 8888:8888 -d customized_response:2.0
 http://x.x.x.x:8888/api/v1/config
 ~~~
 <div align="center">
-  <img src="https://github.com/TomCat552/customized_response/blob/main/1.png">
+  <img src="https://github.com/TomCat552/customized_response/blob/main/images/customized_response_1.png">
 </div>
 4. 输入对应的响应头和响应体信息，点击更新信息
 <div align="center">
-  <img src="https://github.com/TomCat552/customized_response/blob/main/2.png">
+  <img src="https://github.com/TomCat552/customized_response/blob/main/images/customized_response_2.png">
 </div>
 5. 随便访问任意路径（非/api/v1/config路径）
 <div align="center">
-  <img src="https://github.com/TomCat552/customized_response/blob/main/3.png">
+  <img src="https://github.com/TomCat552/customized_response/blob/main/images/customized_response_3.png">
 </div>
 
 ### **NOTES**
