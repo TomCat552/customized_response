@@ -63,7 +63,7 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         # print(headers_list)
         for header in headers_list:
             info = header.split(':')  # 根据:分割响应头, 并去除值开头空格
-            print(info)
+            # print(info)
             if info[1] != ' ':
                 while info[1][0] == ' ':
                     info[1] = info[1][1:]
