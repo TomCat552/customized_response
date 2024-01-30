@@ -60,11 +60,13 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
             self.send_header('Content-Length', str(len(respose_data)))
         if '' in headers_list:
             headers_list.remove('')
-
+        # print(headers_list)
         for header in headers_list:
             info = header.split(':')  # 根据:分割响应头, 并去除值开头空格
-            while info[1][0] == ' ':
-                info[1] = info[1][1:]
+            print(info)
+            if info[1] != ' ':
+                while info[1][0] == ' ':
+                    info[1] = info[1][1:]
             self.send_header(info[0], info[1])
 
         self.end_headers()
