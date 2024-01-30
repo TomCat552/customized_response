@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>响应头信息</title>
+    <meta charset="UTF-8">
+    <style>
+        #container {
+            display: flex;
+        }
+        #left {
+            flex: 1;
+        }
+        #right {
+            flex: 1;
+            overflow: hidden;
+        }
+        #headerDisplay {
+            white-space: pre-wrap;
+            overflow: auto;
+            height: 300px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="container">
+        <div id="left">
+            <div id="formWrapper">
+                <form method="post">
+                    <h1>请输入响应头信息</h1>
+                    <textarea id="headerInput" name="headerInput" rows="10" cols="50"></textarea><br>
+                    <button>更新响应头信息</button>
+                    <h1>请输入响应体信息</h1>
+                    <textarea id="bodyInput" name="bodyInput" rows="10" cols="50"></textarea><br>
+
+                </form>
+            </div>
+        </div>
+        <div id="right">
+            <h1>当前的响应头信息:</h1>
+            <div id="headerDisplay">{{headers_data}}</div>
+            <h1>当前的响应体信息:</h1>
+            <div id="bodyDisplay">{{body_data}}</div>
+        </div>
+    </div>
+</body>
+</html>
