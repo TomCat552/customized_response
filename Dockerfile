@@ -7,7 +7,9 @@ WORKDIR /home/customized_response
 # COPY . .
 
 
-COPY requirements.txt . && COPY requirements.txt server.py ./ && COPY static ./static/
+COPY requirements.txt . 
+COPY server.py .
+COPY static ./static
 
 RUN pip install -i https://mirrors.aliyun.com/pypi/simple -r requirements.txt
 CMD [ "python", "server.py" ]
