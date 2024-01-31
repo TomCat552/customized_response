@@ -5,11 +5,11 @@
 ## **使用方法**
 1. 加载镜像
 ~~~
-docker load -i customized_response_2.0.tar
+docker load -i customized_response_2.1.tar
 ~~~
 2. 运行容器
 ~~~
-docker run -p 8888:8888 -d customized_response:2.0
+docker run -p 8888:8888 -d customized_response:2.1
 ~~~
 3. 浏览器访问来配置响应信息
 ~~~
